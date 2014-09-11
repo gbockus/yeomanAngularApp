@@ -1,0 +1,10 @@
+{
+  "angularLodash": "https://github.com/cabrel/angular-lodash",
+  "angularMoment": "https://github.com/urish/angular-moment",
+  "angularUIRouter": "https://github.com/angular-ui/ui-router",
+  "angularUIBootstrap": "http://angular-ui.github.io/bootstrap/",
+  "html2js": "https://github.com/karlgoldstein/grunt-html2js",
+  "ngmin": "https://github.com/btford/ngmin",
+  "ngannotate": "https://github.com/olov/ng-annotate",
+  "npmCheckUpdates": "https://github.com/tjunnone/npm-check-updates"
+}
