@@ -25,3 +25,18 @@ Out of the box I include Bootstrap and some AngularJS recommended modules.
 [?] Which modules would you like to include? angular-animate.js, angular-cookies.js, angular-sanitize.js
 ...
 ```
+
+To view the original app created by the angular generator you use the following command: 
+```
+git checkout -f 0.0.1
+```
+
+To view the updated project use:
+```
+git checkout -f 0.0.2
+```
+
+To see a diff of the two difference releases:
+```
+https://github.com/gbockus/yeomanAngularApp/compare/0.0.1...0.0.2
+```
