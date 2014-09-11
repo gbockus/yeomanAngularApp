@@ -388,14 +388,14 @@ module.exports = function (grunt) {
     concurrent: {
       server: [
         'compass:server',
-		    'html2js'
+        'html2js'
       ],
       test: [
         'compass',
-		'html2js'
+        'html2js'
       ],
       dist: [
-		'html2js',
+        'html2js',
         'compass:dist',
         'imagemin',
         'svgmin'
