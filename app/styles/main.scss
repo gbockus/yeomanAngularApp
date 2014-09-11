@@ -1,5 +1,6 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap.scss";
 // endbower
 
 .browsehappy {
@@ -88,4 +89,18 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+}
+
+.links {
+	ul {
+		padding: 2em;
+	}
+}
+
+.yeoman-img {
+	background-image: url('/images/yeoman.png');
+	width: 103px;
+	height: 89px;
+	margin-left: auto;
+	margin-right: auto;
 }
