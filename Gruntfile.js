@@ -18,7 +18,10 @@ module.exports = function (grunt) {
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
-    dist: 'dist'
+    dist: 'dist',
+    tpl: {
+      app: ['app/scripts/**/*.tpl.html']
+    }
   };
 
   // Define the configuration for all the tasks
@@ -47,6 +50,12 @@ module.exports = function (grunt) {
       compass: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
         tasks: ['compass:server', 'autoprefixer']
+      },
+      html2js: {
+          files: [
+            '<%= yeoman.tpl.app %>'
+          ],
+          tasks: ['html2js']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -163,7 +172,6 @@ module.exports = function (grunt) {
     // Automatically inject Bower components into the app
     wiredep: {
       options: {
-        cwd: '<%= yeoman.app %>'
       },
       app: {
         src: ['<%= yeoman.app %>/index.html'],
@@ -184,7 +192,7 @@ module.exports = function (grunt) {
         imagesDir: '<%= yeoman.app %>/images',
         javascriptsDir: '<%= yeoman.app %>/scripts',
         fontsDir: '<%= yeoman.app %>/styles/fonts',
-        importPath: './bower_components',
+        importPath: '<%= yeoman.app %>/../bower_components',
         httpImagesPath: '/images',
         httpGeneratedImagesPath: '/images/generated',
         httpFontsPath: '/styles/fonts',
@@ -270,6 +278,17 @@ module.exports = function (grunt) {
     //   dist: {}
     // },
 
+ 	html2js: {
+      app: {
+        options: {
+          base: '<%= yeoman.app %>/scripts'
+        },
+        src: ['<%= yeoman.tpl.app %>'],
+        dest: '<%= yeoman.app %>/templates/templates.js',
+        module: 'templates.app'
+	  }
+    },
+
     imagemin: {
       dist: {
         files: [{
@@ -310,10 +329,8 @@ module.exports = function (grunt) {
       }
     },
 
-    // ngmin tries to make the code safe for minification automatically by
-    // using the Angular long form for dependency injection. It doesn't work on
-    // things like resolve or inject so those have to be done manually.
-    ngmin: {
+    // Annotates all the things!
+    ngAnnotate: {
       dist: {
         files: [{
           expand: true,
@@ -343,7 +360,7 @@ module.exports = function (grunt) {
             '*.{ico,png,txt}',
             '.htaccess',
             '*.html',
-            'views/{,*/}*.html',
+            'data/{,*/}*.json',
             'images/{,*/}*.{webp}',
             'fonts/*'
           ]
@@ -370,12 +387,15 @@ module.exports = function (grunt) {
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       server: [
-        'compass:server'
+        'compass:server',
+        'html2js'
       ],
       test: [
-        'compass'
+        'compass',
+        'html2js'
       ],
       dist: [
+        'html2js',
         'compass:dist',
         'imagemin',
         'svgmin'
@@ -427,7 +447,7 @@ module.exports = function (grunt) {
     'concurrent:dist',
     'autoprefixer',
     'concat',
-    'ngmin',
+    'ngAnnotate',
     'copy:dist',
     'cdnify',
     'cssmin',

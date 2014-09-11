@@ -1,0 +1,8 @@
+{
+  "bower": "http://bower.io/",
+  "jshint": "http://www.jshint.com/",
+  "karma": "http://karma-runner.github.io/",
+  "grunticon": "https://github.com/filamentgroup/grunticon",
+  "npmCheckUpdates": "https://github.com/tjunnone/npm-check-updates",
+  "yeoman": "http://yeoman.io/"
+}

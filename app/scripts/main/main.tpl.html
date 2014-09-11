@@ -1,0 +1,40 @@
+<div class="jumbotron">
+  <h1>'Allo, 'Allo!</h1>
+  <p class="lead">
+    <div class="yeoman-img" alt="I'm Yeoman"></div><br>
+    Always a pleasure scaffolding your apps.
+  </p>
+  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+</div>
+
+<div class="row marketing">
+  <h4><a href tooltip="{{tooltips.boilerPlate}}">HTML5 Boilerplate</a></h4>
+  <p>
+    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
+  </p>
+
+  <h4><a href tooltip="{{tooltips.angular}}">Angular</a></h4>
+  <p>
+    AngularJS is a toolset for building the framework most suited to your application development.
+  </p>
+
+  <h4><a href tooltip="{{tooltips.karma}}">Karma</a></h4>
+  <p>Spectacular Test Runner for JavaScript.</p>
+
+  <h4><a href tooltip="{{tooltips.uiBootstrap}}">UI Bootstrap</a></h4>
+  <div class="btn-group">
+    <label class="btn btn-success" ng-model="radioModel" btn-radio="'Left'" uncheckable>Left</label>
+    <label class="btn btn-success" ng-model="radioModel" btn-radio="'Middle'" uncheckable>Middle</label>
+    <label class="btn btn-success" ng-model="radioModel" btn-radio="'Right'" uncheckable>Right</label>
+  </div>
+  <div>radioModel: {{radioModel}}</div>
+
+  <h4><a href tooltip="{{tooltips.lodash}}">angular-lodash</a></h4>
+    <div ng-repeat="num in range(10)">{{num}}</div>
+
+  <h4><a href tooltip="{{tooltips.moment}}">angular-moment</a></h4>
+  <p>
+    Date formatted by moment: <span>{{momentMessage.time | amDateFormat:'dddd, MMMM Do YYYY, h:mm:ss a'}}</span>
+  </p>
+
+</div>
