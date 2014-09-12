@@ -19,11 +19,18 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'bower_components/angular/angular.js',
+      'bower_components/moment/moment.js',
+      'bower_components/lodash/dist/lodash.compat.js',
       'bower_components/angular-mocks/angular-mocks.js',
       'bower_components/angular-animate/angular-animate.js',
       'bower_components/angular-cookies/angular-cookies.js',
       'bower_components/angular-sanitize/angular-sanitize.js',
+      'bower_components/angular-ui-router/release/angular-ui-router.js',
+      'bower_components/angular-ui-bootstrap-bower/ui-bootstrap.js',
+      'bower_components/angular-lodash/angular-lodash.js',
+      'bower_components/angular-moment/angular-moment.js',
       'app/scripts/**/*.js',
+      'app/templates/**/*.js',
       'test/mock/**/*.js',
       'test/spec/**/*.js'
     ],
